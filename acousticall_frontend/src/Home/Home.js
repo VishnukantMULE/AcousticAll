@@ -32,7 +32,7 @@ export default function Home() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/registration">
+            <Link className="nav-link" to="/signin">
               Sign Up
             </Link>
           </li>
