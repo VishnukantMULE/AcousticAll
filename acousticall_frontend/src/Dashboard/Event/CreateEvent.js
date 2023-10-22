@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function CreateEvent() {
     const [eventDetails, setEventDetails] = useState({
@@ -22,6 +25,8 @@ export default function CreateEvent() {
     });
   };
 
+  const navigate = useNavigate();
+
   const handleThumbnailChange = (e) => {
     const file = e.target.files[0];
     setEventDetails({
@@ -31,9 +36,15 @@ export default function CreateEvent() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here (e.g., sending data to the server)
-    console.log('Event Details:', eventDetails);
+    // e.preventDefault();
+    axios.post('http://localhost:5000/createevent', eventDetails)
+      .then((response) => {
+        console.log('Event created successfully:', response.data);
+        navigate('/dashboard');
+      })
+      .catch((error) => {
+        console.error('Error creating event:', error);
+      });
   };
 
   return (

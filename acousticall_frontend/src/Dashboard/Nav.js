@@ -9,7 +9,7 @@ export default function Nav({ setSelectedOption, selectedOption }) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid d-flex justify-content-between align-items-center">
-                <span className={`navbar-brand ${selectedOption === 'company' ? 'active' : ''}`} onClick={() => handleOptionClick('company')}>Company Name</span>
+                <span className={`navbar-brand ${selectedOption === 'company' ? 'active' : ''}`} onClick={() => handleOptionClick('company')}> Acousticall</span>
                 <ul className="navbar-nav">
                     <li className={`nav-item ${selectedOption === 'message' ? 'active' : ''}`} onClick={() => handleOptionClick('message')}>
                         <span className="nav-link" >Messages</span>
@@ -18,7 +18,7 @@ export default function Nav({ setSelectedOption, selectedOption }) {
                         <span className="nav-link">Events</span>
                     </li>
                     <li className={`nav-item ${selectedOption === 'community' ? 'active' : ''}`} onClick={() => handleOptionClick('community')}>
-                        <span className="nav-link" >Community</span>
+                        <span className="nav-link" >Feed</span>
                     </li>
                     <li className={`nav-item ${selectedOption === 'profile' ? 'active' : ''}`} onClick={() => handleOptionClick('profile')}>
                         <span className="nav-link" >Profile</span>

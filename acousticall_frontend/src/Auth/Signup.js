@@ -30,13 +30,15 @@ function Signup() {
       setError('Passwords do not match.');
       return;
     }
+    
 
     // Send registration data to the server
     axios
-      .post('http://localhost:5000/users/registration', formValues)
+      .post('http://localhost:5000/signup', formValues)
       .then((response) => {
         if (response.data.message === 'User was registered successfully!') {
           alert('Registration Successful');
+          navigate('/dashboard')
         } else {
           setError('Registration Failed');
         }

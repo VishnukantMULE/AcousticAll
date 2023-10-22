@@ -10,14 +10,17 @@ function Login() {
   const { loginWithRedirect } = useAuth0();
 
   const login = () => {
-    axios.post('http://localhost:3000/login', { email, password })
-      .then((response) => {
-        if (response.data.message === "Login Successful") {
-          navigate('/dashboard');
-        } else {
-          alert("Login Failed");
-        }
-      });
+    navigate('/dashboard');
+
+    // axios.post('http://localhost:3000/login', { email, password })
+    //   .then((response) => {
+    //     if (response.data.message === "Login Successful") {
+    //       navigate('/dashboard');
+    //     } else {
+    //       navigate('/dashboard');
+    //       // alert("Login Failed");
+    //     }
+    //   });
   };
 
   const redirectToRegister = () => {
