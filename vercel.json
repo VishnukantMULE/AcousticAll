@@ -1,6 +1,5 @@
 {
   "version": 2,
   "builds": [{ "src": "acousticall_frontend/package.json", "use": "@vercel/static-build" }],
-  "routes": [{ "src": "/acousticall_frontend/(.*)", "dest": "/acousticall_frontend/$1" }],
   "cleanUrls": true
 }
